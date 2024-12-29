@@ -1,0 +1,49 @@
+@import '../variables';
+
+.main{
+    // background-color: rgba(0, 0, 255, 0.473);
+
+    .main_FirstDiv{
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .main__title{
+        font-family: $fonte-destaque;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--preto);
+        text-shadow: var(--title-shadow);
+        letter-spacing: 2px;
+
+        &::first-letter{
+            color: $cor1;
+        }
+    }
+
+    .main__paragraph{
+        letter-spacing: 1px;
+        font-family: $fonte-texto;
+        font-weight: 500;
+        font-style: normal;
+        color: $cinza;
+        /* background-color: rgba(255, 0, 0, 0.486); */
+        text-align: start;
+        min-height: 144px;
+        /* font-size: 1.2em; */
+        text-shadow: $text-shadow;
+        font-size: $font-size-3;
+    }
+}
+
+.lista_funcao{
+    // background-color: pink;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
