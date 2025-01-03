@@ -51,17 +51,13 @@ function Cadastro(){
             document.getElementById('senha').classList.add('border-danger')
             document.getElementById('confirmaSenha').classList.add('border-danger')
             setErro(true)
+            setLoading(false)
            
         }else{
             document.getElementById('senha').classList.remove('border-danger')
             document.getElementById('confirmaSenha').classList.remove('border-danger')
             setErro(false)
             
-        }
-    
-        
-        if(!erro)
-        {
             try{
                 setLoading(true)
                 await axios.post('http://localhost:3001/cadUser', usuario)
@@ -95,6 +91,9 @@ function Cadastro(){
                 setLoading(false)
             }
         }
+    
+        
+
         
 
            
