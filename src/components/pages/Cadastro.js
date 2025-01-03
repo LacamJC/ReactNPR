@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react"
 import { useMask  } from '@react-input/mask'
+import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 function Cadastro(){
 
     const[ShowPassword, setShowPassword] = useState(false)
+    const[erroMessage, setErroMessage] = useState('')
     const[erro, setErro] = useState(false)
 
     const notifyErro = (msg) => toast.error(msg)
     const notifySuccess = (msg) => toast.success(msg)
     const [usuario, setUsuario] = useState({
-        nome :  "",
-        email: "",
-        telefone: "",
-        senha : "",
-        confirmaSenha : "" 
+        nome :  '',
+        email: '',
+        telefone: '',
+        senha : '',
+        confirmaSenha : '' 
     })
 
     const BrazilPhoneMask = useMask({
@@ -36,7 +38,7 @@ function Cadastro(){
         setShowPassword(!ShowPassword)
     }
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault()
 
         // console.log(usuario)
@@ -52,10 +54,39 @@ function Cadastro(){
             document.getElementById('confirmaSenha').classList.remove('border-danger')
             setErro(false)
         }
-      
+        const teste = {
+            nome :"joao"
+        }
         
-        erro == true ?  console.log("TEM ERRO") : notifySuccess('Cadastro realizado')
-        console.log(erro)
+        try{
+            await axios.post('http://localhost:3001/cadUser', usuario)
+            .then(response=>{
+                const data = response.data
+                const status = response.status 
+
+                if(status != 201)
+                {
+                    console.log(data.message)
+                    notifyErro(data.message)
+                }else{
+                    notifySuccess(data.message)
+
+                    
+                }
+            }
+                
+            )
+            
+            .catch(err=>{
+                console.log(`Erro ao cadastrar usuario: ${err}`)
+            })
+            
+        }catch(err)
+        {
+            console.log('ERRO TO AXIOS:' +err)
+        }
+
+           
     }
 
     return(

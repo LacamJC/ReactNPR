@@ -1,33 +1,121 @@
 import { Link } from "react-router-dom"
+import {Toaster, toast} from 'react-hot-toast'
+import { useState } from "react"
+import axios from "axios"
 function Login()
 {
+    const [user, setUser] = useState({
+        nome : "",
+        senha : ""
+    })
+
+    const notifyErro = (msg) => toast.error(msg)
+    const notifySuccess = (msg) => toast.success(msg)
+
+    const [showPassword, setShowPassword] = useState(false)
+
+    function handleClick()
+    {
+        setShowPassword(!showPassword)
+    }
+
+    function handleChange(e){
+        const {name, value } = e.target
+
+        setUser({
+            ...user,
+            [name]: value
+        })
+
+        console.log(user)
+
+    }
+
+    async function handleSubmit(e){
+        e.preventDefault()
+
+        try{
+            await axios.post('http://localhost:3001/verifyUser', user)
+            .then(response=>{
+                // console.log(response)
+                const data = response.data
+
+                switch (data.message){
+                    case 'Usuario encontrado':
+                        console.log("### Usuario encontrado")
+                        notifySuccess(data.message)
+                        document.getElementById('senha').classList.remove('border-danger')
+                        
+                        const usuario = data.data 
+                        // console.log(usuario)
+
+                        localStorage.setItem('User', usuario)
+                        console.log(localStorage.getItem('User'))
+                        setTimeout(()=>{
+                            window.location.reload()
+                        }, 2000)
+                        break
+                    case 'Usuario nao encontrado':
+                        console.log("### Usuario nao encontrado")
+                        document.getElementById('senha').value = ""
+                        document.getElementById('senha').classList.add('border-danger')
+                        notifyErro(data.message)
+                        break;
+                    default:
+                        console.log("Algum erro aconteceu")
+                        notifyErro('Desculpe estamos com alguns problemas')
+                }
+
+                
+            })
+            .catch(err=>{
+                console.log("erro to fetch" + err)
+            })
+        }catch(err){
+            console.log("Erro ao tentar se comuicar com servidor")
+        }
+    }
+
+
     return(<>
-        <form className="w-50 mx-auto my-4">
+        <form className="w-50 mx-auto my-4" onSubmit={handleSubmit}>
             <h1 className="text-center mb-3">Login</h1>
             <div className="form-floating mb-3">
                 <input 
-                    type="text" 
+                    type="email" 
                     className="form-control" 
-                    id="nome" 
-                    placeholder="Nome de usuario"
+                    id="email" 
+                    name="email"
+                    placeholder="Email"
+                    onChange={handleChange}
                 />
-                <label htmlFor="nome">Nome de usuario</label>
+                <label htmlFor="email">Email</label>
             </div>
             <div className="form-floating mb-3  ">
                 <input 
-                    type="password" 
+                    type={showPassword ? "text" : "password"} 
                     className="form-control" 
                     id="senha" 
+                    name="senha"
+                    onChange={handleChange}
                     placeholder="Senha"
+
+                    minLength="6"
+                            maxLength="12"
                 />
                 <label htmlFor="senha">Senha</label>
             </div>
+            <div className="form-check mb-3">
+                        <input type="checkbox" id="ocultarSenha" className="form-check-input" onClick={handleClick}/>
+                        <label htmlFor="ocultarSenha" className="form-check-label" readOnly>Mostrar Senha</label>
+                    </div>
 
             <input type='submit' className="btn btn-success mb-3" value="Logar"></input>
             <div className="form-text">
                 <p>Não possui login ? Faça seu cadastro <Link to="/cadastro">Aqui !</Link></p>
             </div>
         </form>
+        <Toaster/>
     </>)
 }
 

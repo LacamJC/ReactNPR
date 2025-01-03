@@ -1,7 +1,18 @@
 import {Link} from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import styles from '../../scss/layout/Header.module.css'
 import logo from '../../img/logotipo.svg'
+import {toast, Toaster} from 'react-hot-toast'
 function Header(){
+    const [isLogged, setIsLogged] = useState(false)
+    const user = JSON.parse(localStorage.getItem('User'))
+    function logout(){
+        localStorage.removeItem('User')
+        setTimeout(() => {
+            window.location.reload()
+        }, 1);
+    }
+    
     return(
         <>
             <header className={`${styles.header}`}>
@@ -47,12 +58,20 @@ function Header(){
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
                 </ul>
+                    
+             
 
+                {user ? 
+                <div className={`${styles.userInfo}`}>
+                    <h2 className={styles.userLogged}>Olá {user.nome} | <button onClick={logout}>Sair</button><div className={styles.lineUser}></div></h2>
+                    
+                </div> 
+                : 
                 <div className={`${styles.userInfo}`}>
                     <Link to="/cadastro">Cadastre-se</Link>
                     |
                     <Link to="/login">Faça login</Link>
-                </div>
+                </div>}
             </header>
         </>
     )
