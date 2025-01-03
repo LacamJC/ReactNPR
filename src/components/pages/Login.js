@@ -2,12 +2,15 @@ import { Link } from "react-router-dom"
 import {Toaster, toast} from 'react-hot-toast'
 import { useState } from "react"
 import axios from "axios"
+import Loader from "../events/Loader"
 function Login()
 {
     const [user, setUser] = useState({
         nome : "",
         senha : ""
     })
+
+    const [loading,  setLoading] = useState(false)
 
     const notifyErro = (msg) => toast.error(msg)
     const notifySuccess = (msg) => toast.success(msg)
@@ -35,12 +38,14 @@ function Login()
         e.preventDefault()
 
         try{
+            setLoading(true)
             await axios.post('http://localhost:3001/verifyUser', user)
             .then(response=>{
                 // console.log(response)
                 const data = response.data
-
+                setLoading(false)
                 switch (data.message){
+                    
                     case 'Usuario encontrado':
                         console.log("### Usuario encontrado")
                         notifySuccess(data.message)
@@ -70,15 +75,20 @@ function Login()
             })
             .catch(err=>{
                 console.log("erro to fetch" + err)
+                notifyErro('Sem comunicação com o servidor')
+                setLoading(false)
             })
         }catch(err){
             console.log("Erro ao tentar se comuicar com servidor")
+            setLoading(false)
         }
     }
 
 
     return(<>
         <form className="w-50 mx-auto my-4" onSubmit={handleSubmit}>
+            
+            {loading ? <Loader/> : ""}
             <h1 className="text-center mb-3">Login</h1>
             <div className="form-floating mb-3">
                 <input 

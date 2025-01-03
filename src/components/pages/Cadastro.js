@@ -2,11 +2,13 @@ import { useState, useEffect } from "react"
 import { useMask  } from '@react-input/mask'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
+import Loader from "../events/Loader"
 function Cadastro(){
 
     const[ShowPassword, setShowPassword] = useState(false)
     const[erroMessage, setErroMessage] = useState('')
     const[erro, setErro] = useState(false)
+    const[loading, setLoading] = useState(false)
 
     const notifyErro = (msg) => toast.error(msg)
     const notifySuccess = (msg) => toast.success(msg)
@@ -49,42 +51,51 @@ function Cadastro(){
             document.getElementById('senha').classList.add('border-danger')
             document.getElementById('confirmaSenha').classList.add('border-danger')
             setErro(true)
+           
         }else{
             document.getElementById('senha').classList.remove('border-danger')
             document.getElementById('confirmaSenha').classList.remove('border-danger')
             setErro(false)
+            
         }
-        const teste = {
-            nome :"joao"
+    
+        
+        if(!erro)
+        {
+            try{
+                setLoading(true)
+                await axios.post('http://localhost:3001/cadUser', usuario)
+                .then(response=>{
+                    const data = response.data
+                    const status = response.status 
+                    setLoading(false)
+                    if(status != 201)
+                    {
+                        console.log(data.message)
+                        notifyErro(data.message)
+                    }else{
+                        notifySuccess(data.message)
+    
+                        
+                    }
+                }
+                    
+                )
+                
+                .catch(err=>{
+                    console.log(`Erro ao cadastrar usuario: ${err}`)
+                    notifyErro('Sem comunicação com o servidor')
+                    setLoading(false)
+                })
+                
+            }catch(err)
+            {
+                console.log('ERRO TO AXIOS:' +err)
+                notifyErro('Sem comunicação com o servidor')
+                setLoading(false)
+            }
         }
         
-        try{
-            await axios.post('http://localhost:3001/cadUser', usuario)
-            .then(response=>{
-                const data = response.data
-                const status = response.status 
-
-                if(status != 201)
-                {
-                    console.log(data.message)
-                    notifyErro(data.message)
-                }else{
-                    notifySuccess(data.message)
-
-                    
-                }
-            }
-                
-            )
-            
-            .catch(err=>{
-                console.log(`Erro ao cadastrar usuario: ${err}`)
-            })
-            
-        }catch(err)
-        {
-            console.log('ERRO TO AXIOS:' +err)
-        }
 
            
     }
@@ -92,7 +103,7 @@ function Cadastro(){
     return(
         <>
             <h1 className={`text-center`}>Preencha seus dados</h1>
-                
+            {loading ? <Loader/> : ""}
             <form className="w-50 mx-auto my-4" onSubmit={handleSubmit}>
                 <div className="form-floating mb-3 ">
                     <input 

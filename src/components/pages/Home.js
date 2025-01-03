@@ -4,9 +4,12 @@ import FuncaoSite from '../FuncaoSite'
 import IconeCaminhao from '../../img/caminhao.png'
 import IconeReciclagem from '../../img/reciclagem.jpg'
 import { Link } from 'react-router-dom'
+import Loader from '../events/Loader'
 function Home(){
     return(
+        <>
         <div className={`container m-auto`}>
+            
             <main className={`row w-100  bg-wardning ${styles.main} `}>
                 <div className={`col col-12 col-md-8 ${styles.main_FirstDiv}`}>
                     <h1 className={styles.main__title}>Natureza Prioridade Renovada</h1>
@@ -40,6 +43,7 @@ function Home(){
             </article>
             
         </div>
+        </>
     )
 }
 
