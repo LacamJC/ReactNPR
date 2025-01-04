@@ -8,14 +8,14 @@ function ServerStatus(){
     {
         
         try{
-            console.log("verificando serivdor")
+            // console.log("verificando serivdor")
             localStorage.removeItem('serverStatus')
             await axios.get('http://localhost:3001/ping')
             .then(response=>{
                 // O servidor esta ativo
                 
                 setServer(true)
-                console.log("O SERVIDOR ESTA ATIVO")
+                // console.log("O SERVIDOR ESTA ATIVO")
             })
             .catch(err=>{
                 // Erro ao se comunicar com o servidor
@@ -42,10 +42,10 @@ function ServerStatus(){
     }
 
     useEffect(()=>{
-        console.log("TESTE TESTE")
+        // console.log("TESTE TESTE")
         ping()
 
-        setInterval(ping, 5000)
+        setInterval(ping, 10000)
     },[])
 
     return(

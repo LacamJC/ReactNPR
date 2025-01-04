@@ -5,7 +5,12 @@ import IconeCaminhao from '../../img/caminhao.png'
 import IconeReciclagem from '../../img/reciclagem.jpg'
 import { Link } from 'react-router-dom'
 import Loader from '../events/Loader'
+import { useEffect } from 'react'
 function Home(){
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
+
     return(
         <>
         <div className={`container m-auto`}>

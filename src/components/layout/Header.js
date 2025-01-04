@@ -70,7 +70,7 @@ function Header(){
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
                     <li className={`${styles.navMenu__item} `} onClick={closeNav}>
-                        <Link to="/pontos_coleta" className={`${styles.navMenu__item__link}`}>Pontos de Coleta</Link>
+                        <Link to="/pontos" className={`${styles.navMenu__item__link}`}>Pontos de Coleta</Link>
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
                 </ul>

@@ -14,18 +14,18 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <div className=''>
-      <Router>
-        <Header/>
-        <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route path="/mapa" element={<Mapa/>}/>
-          <Route path="/cadastro" element={<Cadastro/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/pontos" element={<Pontos/>}/> 
-          <Route path="/cadastroPonto" element={<CadastroPonto/>}/>
-        </Routes>
-        <Footer/>
-      </Router>
+        <Router>
+          <Header/>
+          <Routes>
+            <Route exact path="/" element={<Home/>}/>
+            <Route path="/mapa" element={<Mapa/>}/>
+            <Route path="/cadastro" element={<Cadastro/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/pontos" element={<Pontos/>}/> 
+            <Route path="/cadastroPonto" element={<CadastroPonto/>}/>
+          </Routes>
+          <Footer/>
+        </Router>
     </div>
   );
 }

@@ -1,6 +1,13 @@
 import styles from '../../scss/pages/Pontos.module.css'
 import {Link} from 'react-router-dom'
+import { useEffect } from 'react'
 function Pontos(){
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
+
+      
     return(
         <>
             <main className={`${styles.main}`}>

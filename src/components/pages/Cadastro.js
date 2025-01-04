@@ -20,6 +20,11 @@ function Cadastro(){
         confirmaSenha : '' 
     })
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
+
+
     const BrazilPhoneMask = useMask({
         mask: '(__) _____-____',
         replacement: { _: /\d/ }}

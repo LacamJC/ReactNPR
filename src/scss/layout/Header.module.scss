@@ -3,7 +3,11 @@
 .header{
     background-color: white;
     height: 120px;
-    @media screen and (min-width: 769px){    position: relative;}
+    z-index: 10;
+    @media screen and (min-width: 769px){
+        position: relative;
+        margin-bottom: 50px;
+    }
     // border-bottom: 1px solid $cinza;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.123);
     top: 0;

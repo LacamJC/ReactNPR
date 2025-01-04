@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import {Toaster, toast} from 'react-hot-toast'
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import styles from '../../scss/pages/Login.module.css'
 import axios from "axios"
 import Loader from "../events/Loader"
 import ServerStatus from "../events/ServerStatus"
@@ -85,11 +86,16 @@ function Login()
         }
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
 
     return(<>
-        <form className="w-50 mx-auto my-4" onSubmit={handleSubmit}>
+    {loading ? <Loader/> : ""}
+    {/* <Loader/> */}
+        <form className={`${styles.formulario} `} onSubmit={handleSubmit}>
             
-            {loading ? <Loader/> : ""}
+            
             <h1 className="text-center mb-3">Login</h1>
             <div className="form-floating mb-3">
                 <input 
@@ -122,18 +128,18 @@ function Login()
                             id="ocultarSenha" 
                             className="form-check-input" 
                             onClick={handleClick}
-                            required
-                            minLength="6"
-                            maxLength="12"
+                            
                         />
                         <label htmlFor="ocultarSenha" className="form-check-label" readOnly>Mostrar Senha</label>
                     </div>
 
-            <input type='submit' className="btn btn-success mb-3" value="Logar"></input>
-            <ServerStatus/>
-            <div className="form-text">
-                <p>Não possui login ? Faça seu cadastro <Link to="/cadastro">Aqui !</Link></p>
+            <div className="row">
+                <div className="col col-12 col-md-4"><input type='submit' className="btn btn-success mb-3 w-100" value="Logar"/></div>
+                <div className="form-text col col-12 col-md-8">
+                    <p>Não possui login ? Faça seu cadastro <Link to="/cadastro">Aqui !</Link></p>
+                </div>
             </div>
+            <ServerStatus/>
         </form>
         <Toaster/>
     </>)

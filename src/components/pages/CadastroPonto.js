@@ -32,6 +32,11 @@ function CadastroPonto(){
         replacement: {_: /\d/}
     })
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [])
+
+
     async function axiosCep(){
         console.log("PUXANDO DADOS DO CU")
         var cep = document.getElementById('cep').value 
@@ -95,7 +100,7 @@ function CadastroPonto(){
 
     function handleChange(e){
         const {name, value} = e.target
-
+        console.log(e.target.value)
         
 
         setFormData({
@@ -127,6 +132,22 @@ function CadastroPonto(){
         }
        
         
+    }
+
+    function handleChangeTipo(e){
+        const inputs = document.getElementsByClassName('tiposCol')
+        var arrayInputs = new Array()
+        const tipos = {
+            0 : "eletonico",
+            1 : "reciclavel", 
+            2 : "organico",
+            3 : "oleo"
+        }
+        
+
+        
+        
+
     }
 
     return(
@@ -211,9 +232,52 @@ function CadastroPonto(){
                                 </div>
                             </div>
                         </div>
+                        
+                        <h3 className={`mb-3`}>Tipo de Coleta</h3>
+                        <div className="btn-group mb-3" role="group">
+                            
+                            <input 
+                                type="checkbox" 
+                                className="btn-check tiposCol" 
+                                id="eletronico" 
+                                autocomplete="off"
+                                onChange={handleChangeTipo}
+                                value="eletronico"
+                                />
+                            <label className="btn btn-outline-success" htmlFor="eletronico">Eletrônico</label>
 
-                        <input type="submit" value="enviar" className="btn btn- btn-success"/>   
+                            <input 
+                                type="checkbox" 
+                                className="btn-check tiposCol" 
+                                id="reciclavel" 
+                                autocomplete="off"
+                                onChange={handleChangeTipo}
+                                value="reciclavel"
+                                />
+                            <label className="btn btn-outline-success" htmlFor="reciclavel">Reciclável</label>
+
+                            <input 
+                                type="checkbox" 
+                                className="btn-check tiposCol" 
+                                id="organico" 
+                                autocomplete="off"
+                                onChange={handleChangeTipo}
+                                value="organico"
+                                />
+                            <label className="btn btn-outline-success" htmlFor="organico">Orgânico</label>
+
+                            <input 
+                                type="checkbox" 
+                                className="btn-check tiposCol" 
+                                id="oleo" 
+                                autocomplete="off"
+                                onChange={handleChangeTipo}
+                                value="oleo"
+                                />
+                            <label className="btn btn-outline-success" htmlFor="oleo">Oléo</label>
+                        </div>
                         <ServerStatus/>
+                        <input type="submit" value="Cadastrar" className="btn btn- btn-success mb-3 w-50 mx-auto"/> 
                 </form>
             </>
         ): 
