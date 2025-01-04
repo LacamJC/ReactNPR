@@ -19,7 +19,7 @@ function CadastroPonto(){
         rua: "",
         foto: "",
         descricao: "",
-        tipo: ""
+        tipo: []
     })
 
     const[erro, setErro] = useState({
@@ -109,12 +109,30 @@ function CadastroPonto(){
         })
     }
 
+    function handleCheckboxChange(e){
+        const {value, checked} = e.target
+        const update = [...formData.tipo]
+
+        if (checked) {
+            update.push(value);
+          } else {
+            const index = update.indexOf(value);
+            if (index !== -1) {
+              update.splice(index, 1);
+            }
+          }
+
+          setFormData({
+            ...formData,
+            tipo: update,
+          });
+
+    }
+
     async function handleSubmit(e)
     {
         e.preventDefault()
-
-
-        console.log(erro)
+        
         
         if(erro.status)
         {
@@ -134,21 +152,10 @@ function CadastroPonto(){
         
     }
 
-    function handleChangeTipo(e){
-        const inputs = document.getElementsByClassName('tiposCol')
-        var arrayInputs = new Array()
-        const tipos = {
-            0 : "eletonico",
-            1 : "reciclavel", 
-            2 : "organico",
-            3 : "oleo"
-        }
-        
+ 
 
         
         
-
-    }
 
     return(
         <>
@@ -240,8 +247,7 @@ function CadastroPonto(){
                                 type="checkbox" 
                                 className="btn-check tiposCol" 
                                 id="eletronico" 
-                                autocomplete="off"
-                                onChange={handleChangeTipo}
+                                onChange={handleCheckboxChange}
                                 value="eletronico"
                                 />
                             <label className="btn btn-outline-success" htmlFor="eletronico">Eletrônico</label>
@@ -250,8 +256,7 @@ function CadastroPonto(){
                                 type="checkbox" 
                                 className="btn-check tiposCol" 
                                 id="reciclavel" 
-                                autocomplete="off"
-                                onChange={handleChangeTipo}
+                                onChange={handleCheckboxChange}
                                 value="reciclavel"
                                 />
                             <label className="btn btn-outline-success" htmlFor="reciclavel">Reciclável</label>
@@ -260,8 +265,7 @@ function CadastroPonto(){
                                 type="checkbox" 
                                 className="btn-check tiposCol" 
                                 id="organico" 
-                                autocomplete="off"
-                                onChange={handleChangeTipo}
+                                onChange={handleCheckboxChange}
                                 value="organico"
                                 />
                             <label className="btn btn-outline-success" htmlFor="organico">Orgânico</label>
@@ -270,8 +274,7 @@ function CadastroPonto(){
                                 type="checkbox" 
                                 className="btn-check tiposCol" 
                                 id="oleo" 
-                                autocomplete="off"
-                                onChange={handleChangeTipo}
+                                onChange={handleCheckboxChange}
                                 value="oleo"
                                 />
                             <label className="btn btn-outline-success" htmlFor="oleo">Oléo</label>
