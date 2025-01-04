@@ -182,7 +182,7 @@ function Cadastro(){
                             <label htmlFor="floatingInput">Confirme a senha</label>
                         </div>
                     </div>
-                    <div className="form-check mb-3">
+                    <div className="form-check mb-3 mx-3">
                         <input type="checkbox" id="ocultarSenha" className="form-check-input" onClick={handleClick}/>
                         <label htmlFor="ocultarSenha" className="form-check-label" readOnly>Mostrar Senha</label>
                     </div>
