@@ -1,0 +1,50 @@
+@import '../variables';
+
+.main
+{
+    // background-color: red;
+    max-width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 100px auto;
+    .main__title{
+        // background-color: green;
+        font-family: $fonte-destaque;
+        font-size: $font-size-1;
+        text-shadow: $title-shadow;
+        &::first-letter{
+            color: $cor1;
+        }
+    }
+
+    .main__paragraph{
+        // background-color: yellow;
+        margin: 0px 40px;
+        letter-spacing: $letter-space;
+        font-family: $fonte-texto;
+        color: $font-color;
+        font-size: $font-size-3;
+        text-shadow: $text-shadow;
+    }
+
+    .main__btn
+    {
+        height: 41px;
+        background-color: $cor1;
+        color: rgb(245, 245, 245);
+        font-weight: bold;
+        width: 175px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: $btn-shadow;
+        // margin: auto;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+}

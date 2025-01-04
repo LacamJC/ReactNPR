@@ -12,6 +12,16 @@ function Header(){
             window.location.reload()
         }, 1);
     }
+
+    function handleClick(){
+        console.log("CLICK")
+        console.log(document.getElementById('checkbox').checked)
+        
+    }
+
+    function closeNav(){
+        document.getElementById('checkbox').checked = false
+    }
     
     return(
         <>
@@ -33,27 +43,27 @@ function Header(){
                         <div className={`${styles.hiddenLine}`}></div>
                     </li> */}
                     <li className={`${styles.navMenu__item}`}>
-                        <Link to="/pontos_coleta" className={`${styles.navMenu__item__link}`}>Pontos de Coleta</Link>
+                        <Link to="/pontos" className={`${styles.navMenu__item__link}`}>Pontos de Coleta</Link>
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
                     
                 </ul>
                 
-                <input type="checkbox" className={`${styles.hidden__checkbox}`}></input>
+                <input type="checkbox" className={`${styles.hidden__checkbox}`} id="checkbox" onClick={handleClick}></input>
                 <ul className={`${styles.hidden__navMenu}`}>
-                <li className={`${styles.navMenu__item}`}>
+                <li className={`${styles.navMenu__item} `} onClick={closeNav}>
                         <Link to="/" className={`${styles.navMenu__item__link}`}>Home</Link>
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
-                    <li className={`${styles.navMenu__item}`}>
+                    <li className={`${styles.navMenu__item} `} onClick={closeNav}>
                         <Link to="/mapa" className={`${styles.navMenu__item__link}`}>Mapa</Link>
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
-                    <li className={`${styles.navMenu__item}`}>
+                    <li className={`${styles.navMenu__item} `} onClick={closeNav}>
                         <Link to="/login" className={`${styles.navMenu__item__link}`}>Login</Link>
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
-                    <li className={`${styles.navMenu__item}`}>
+                    <li className={`${styles.navMenu__item} `} onClick={closeNav}>
                         <Link to="/pontos_coleta" className={`${styles.navMenu__item__link}`}>Pontos de Coleta</Link>
                         <div className={`${styles.hiddenLine}`}></div>
                     </li>
