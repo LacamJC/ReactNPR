@@ -9,7 +9,7 @@ function FuncaoSite({nome_funcao, icone, texto, link, text_link}){
                     <p className={styles.funcao__paragrafo}>
                         {texto}
                     </p>
-                    <Link to={`/${link}`} className={`btn btn-success my-2`}>{text_link}</Link>
+                    <Link to={`/${link}`} className={`btn btn-success my-2 ${styles.buton}`}>{text_link}</Link>
                 </div>
         </>
     )

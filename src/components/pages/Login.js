@@ -110,14 +110,22 @@ function Login()
                     name="senha"
                     onChange={handleChange}
                     placeholder="Senha"
-
+                    required
                     minLength="6"
-                            maxLength="12"
+                    maxLength="12"
                 />
                 <label htmlFor="senha">Senha</label>
             </div>
             <div className="form-check mb-3">
-                        <input type="checkbox" id="ocultarSenha" className="form-check-input" onClick={handleClick}/>
+                        <input 
+                            type="checkbox" 
+                            id="ocultarSenha" 
+                            className="form-check-input" 
+                            onClick={handleClick}
+                            required
+                            minLength="6"
+                            maxLength="12"
+                        />
                         <label htmlFor="ocultarSenha" className="form-check-label" readOnly>Mostrar Senha</label>
                     </div>
 

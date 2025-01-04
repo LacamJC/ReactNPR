@@ -27,7 +27,7 @@ function Home(){
                 <FuncaoSite 
                     nome_funcao="Nosso Mapa"
                     icone={`${IconeCaminhao}`}
-                    texto="Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. Descubra a localização exata de cada ponto e o tipo específico de coleta que eles oferecem."
+                    texto="Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. "
                     link="mapa"
                     text_link="Ir para mapa"
                 />
@@ -38,6 +38,15 @@ function Home(){
                     texto="Se você deseja contribuir enviando pontos de coleta para a análise, basta se cadastrar no nosso sistema. O processo é rápido !"
                     link="cadastro"
                     text_link="Cadastre-se"
+                />
+
+                <FuncaoSite
+                    nome_funcao="Pontos de Coleta"
+                    icone={`${IconeReciclagem}`}
+                    texto="Nos ajude a contribuir para o combate ao descarte irregular, faça o cadastro de um ponto de coleta !"
+                    link="pontos"
+                    text_link="Pontos de Coleta"
+                    
                 />
                 <div className={`col col-12 col-md-6`}></div>
             </article>
