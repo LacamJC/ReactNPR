@@ -3,6 +3,7 @@ import {Toaster, toast} from 'react-hot-toast'
 import { useState } from "react"
 import axios from "axios"
 import Loader from "../events/Loader"
+import ServerStatus from "../events/ServerStatus"
 function Login()
 {
     const [user, setUser] = useState({
@@ -121,6 +122,7 @@ function Login()
                     </div>
 
             <input type='submit' className="btn btn-success mb-3" value="Logar"></input>
+            <ServerStatus/>
             <div className="form-text">
                 <p>Não possui login ? Faça seu cadastro <Link to="/cadastro">Aqui !</Link></p>
             </div>

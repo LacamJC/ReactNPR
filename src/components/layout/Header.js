@@ -2,9 +2,11 @@ import {Link} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import styles from '../../scss/layout/Header.module.css'
 import logo from '../../img/logotipo.svg'
+
 import {toast, Toaster} from 'react-hot-toast'
 function Header(){
     const [isLogged, setIsLogged] = useState(false)
+ 
     const user = JSON.parse(localStorage.getItem('User'))
     function logout(){
         localStorage.removeItem('User')
@@ -22,6 +24,10 @@ function Header(){
     function closeNav(){
         document.getElementById('checkbox').checked = false
     }
+
+    
+
+    
     
     return(
         <>

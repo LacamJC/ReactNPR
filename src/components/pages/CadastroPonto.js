@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import {Toaster, toast} from 'react-hot-toast'
 import axios from 'axios'
 import styles from '../../scss/pages/CadastroPonto.module.css'
+import ServerStatus from '../events/ServerStatus'
 function CadastroPonto(){
     const user = JSON.parse(localStorage.getItem('User'))
     
@@ -211,7 +212,8 @@ function CadastroPonto(){
                             </div>
                         </div>
 
-                        <input type="submit" value="enviar" className="btn btn-success"/>   
+                        <input type="submit" value="enviar" className="btn btn- btn-success"/>   
+                        <ServerStatus/>
                 </form>
             </>
         ): 
