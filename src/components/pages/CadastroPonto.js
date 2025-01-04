@@ -10,7 +10,7 @@ function CadastroPonto(){
     const notifySuccess = (msg) => toast.success(msg)
     const notifyError = (msg) => toast.error(msg)
     const [formData, setFormData] = useState({
-        email : user.email,
+        email : "",
         instituicao : "",
         cep : "",
         cidade : "",
@@ -74,6 +74,7 @@ function CadastroPonto(){
 
                     setFormData({
                         ...formData,
+                        email : user.email,
                         cidade : data.localidade,
                         bairro : data.bairro,
                         rua : data.logradouro
@@ -216,7 +217,7 @@ function CadastroPonto(){
         ): 
             (
                 <div className='alert alert-warning'>
-                    Para acessar o formulario de cadastro de pontos é necessario estar logado, faça <Link>Login</Link>
+                    Para acessar o formulario de cadastro de pontos é necessario estar logado, faça <Link to='/login'>Login</Link>
                 </div>
             )
         }
