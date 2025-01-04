@@ -148,35 +148,39 @@ function Cadastro(){
                     />
                     <label htmlFor="floatingInput">Número de telefone</label>
                     </div>
-                <div className="row m-1">
-                    <div className="form-floating mb-3 col col-12 col-md-6 p-1">
-                        <input 
-                            type={ShowPassword ? "text" : "password"}
-                            className="form-control"
-                            id="senha"
-                            name="senha"
-                            required
-                            
-                            minLength="6"
-                            maxLength="12"
-                            placeholder=""
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="floatingInput">Senha</label>
+                <div className="row">
+                    <div class="col col-12 col-md-6">
+                        <div className="form-floating mb-3">
+                            <input
+                                type={ShowPassword ? "text" : "password"}
+                                className="form-control"
+                                id="senha"
+                                name="senha"
+                                required
+                        
+                                minLength="6"
+                                maxLength="12"
+                                placeholder=""
+                                onChange={handleChange}
+                            />
+                            <label htmlFor="floatingInput">Senha</label>
+                        </div>
                     </div>
-                    <div className="form-floating mb-3 col col-12 col-md-6 p-1">
-                        <input 
-                            type={ShowPassword ? "text" : "password"}
-                            className="form-control"
-                            id="confirmaSenha"
-                            name="confirmaSenha"
-                            placeholder=""
-                            required
-                            minLength="6"
-                            maxLength="12"
-                            onChange={handleChange}
-                        />
-                        <label htmlFor="floatingInput">Confirme a senha</label>
+                    <div class="col col-12 col-md-6">
+                        <div className="form-floating mb-3">
+                            <input
+                                type={ShowPassword ? "text" : "password"}
+                                className="form-control"
+                                id="confirmaSenha"
+                                name="confirmaSenha"
+                                placeholder=""
+                                required
+                                minLength="6"
+                                maxLength="12"
+                                onChange={handleChange}
+                            />
+                            <label htmlFor="floatingInput">Confirme a senha</label>
+                        </div>
                     </div>
                     <div className="form-check mb-3">
                         <input type="checkbox" id="ocultarSenha" className="form-check-input" onClick={handleClick}/>
