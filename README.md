@@ -48,7 +48,7 @@
 - Sequelize
 - Bootstrap
 
-
+<pre>
 `Directory structure:
 └── LacamJC-ReactNPR/
     ├── README.md
@@ -110,3 +110,4 @@
                 ├── Pontos.module.css
                 └── Pontos.module.scss
 `
+</pre>
