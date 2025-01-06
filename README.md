@@ -47,3 +47,66 @@
 - MySQL
 - Sequelize
 - Bootstrap
+
+
+
+Directory structure:
+└── LacamJC-ReactNPR/
+    ├── README.md
+    ├── package.json
+    ├── public/
+    │   ├── index.html
+    │   ├── manifest.json
+    │   ├── robots.txt
+    │   └── img/
+    │       ├── carrosel/
+    │       └── icons/
+    └── src/
+        ├── App.css
+        ├── App.js
+        ├── App.test.js
+        ├── index.css
+        ├── index.js
+        ├── reportWebVitals.js
+        ├── setupTests.js
+        ├── components/
+        │   ├── FuncaoSite.js
+        │   ├── events/
+        │   │   ├── Loader.js
+        │   │   └── ServerStatus.js
+        │   ├── layout/
+        │   │   ├── Footer.js
+        │   │   └── Header.js
+        │   └── pages/
+        │       ├── Cadastro.js
+        │       ├── CadastroPonto.js
+        │       ├── Home.js
+        │       ├── Login.js
+        │       ├── Mapa.js
+        │       └── Pontos.js
+        ├── img/
+        │   ├── carrosel/
+        │   └── icons/
+        └── scss/
+            ├── FuncaoSite.module.css
+            ├── FuncaoSite.module.scss
+            ├── _variables.scss
+            ├── events/
+            │   ├── Loader.module.css
+            │   └── Loader.module.scss
+            ├── layout/
+            │   ├── Footer.module.css
+            │   ├── Footer.module.scss
+            │   ├── Header.module.css
+            │   └── Header.module.scss
+            └── pages/
+                ├── CadastroPonto.module.css
+                ├── CadastroPonto.module.scss
+                ├── Home.module.css
+                ├── Home.module.scss
+                ├── Login.module.css
+                ├── Login.module.scss
+                ├── Mapa.module.css
+                ├── Mapa.module.scss
+                ├── Pontos.module.css
+                └── Pontos.module.scss
