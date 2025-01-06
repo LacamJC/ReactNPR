@@ -49,8 +49,7 @@
 - Bootstrap
 
 
-
-Directory structure:
+`Directory structure:
 └── LacamJC-ReactNPR/
     ├── README.md
     ├── package.json
@@ -110,3 +109,4 @@ Directory structure:
                 ├── Mapa.module.scss
                 ├── Pontos.module.css
                 └── Pontos.module.scss
+`
