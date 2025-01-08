@@ -15,9 +15,11 @@ function Pontos(){
         const fetchData = async () => {
             try {
               const response = await axios.get('http://localhost:3001/pontos');
+              console.log(response.status)
               setPontos(response.data);
             } catch (error) {
                setPontos(DefaultData) 
+               
               console.error('Erro ao buscar dados:', error)
             }
           }
@@ -27,7 +29,6 @@ function Pontos(){
         fetchData()
       }, [])
 
-      console.log(pontos)
 
 
 
