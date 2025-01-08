@@ -1,22 +1,48 @@
 [
     {
-        "instituicao": "Recicla Barueri",
+        "email_usuario" : "root@gmail.com",
+        "instituicao" : "Recicla Barueri",
         "cep" : "06440-010",
-        "tipo": "['Eletrônico']"
+        "cidade" : "Barueri",
+        "bairro" : "Jardim Iracema",
+        "rua" : "Av. Iracema",
+        "tipo" : ["Eletrônico"]
     },
     {
-        "instituicao": "SAMVIT Reciclagem Eletrônica ",
+        "email_usuario" : "root@gmail.com",
+        "instituicao" : "SAMVIT",
         "cep" : "06408-030",
-        "tipo": "['Eletrônico']"
+        "cidade" : "Barueri",
+        "bairro" : "Vila Morellato",
+        "rua" : "Avenida Etiópia",
+        "tipo" : ["Eletrônico"]
     },
     {
-        "instituicao": "Novo Horizonte Ambiental",
+        "email_usuario" : "root@gmail.com",
+        "instituicao" : "RECICLA TOTAL ",
+        "cep" : "06440-200",
+        "cidade" : "Barueri",
+        "bairro" : "Jardim Iracema/Aldeia",
+        "rua" : "Rua Engenheiro Cezar Polillo",
+        "tipo" : ["Eletrônico"]
+    },
+    {
+        "email_usuario" : "root@gmail.com",
+        "instituicao" : "Novo Horizonte Ambiental",
         "cep" : "06404-301",
-        "tipo": "['Organico']"
+        "cidade" : "Barueri",
+        "bairro" : "Bethaville I",
+        "rua" : "Rua Caldas Novas",
+        "tipo" : ["Orgânico"]
     },
     {
-        "instituicao": "Porto Metais e Reciclagem",
-        "cep" : "06445-000",
-        "tipo": "['Reciclável']"
+        "email_usuario" : "root@gmail.com",
+        "instituicao" : "Veolia",
+        "cep" : "06408-040",
+        "cidade" : "Barueri",
+        "bairro" : "Vila Morellato",
+        "rua" : "Rua Macatuba",
+        "tipo" : ["Orgânico"]
     }
+
 ]
