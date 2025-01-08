@@ -83,19 +83,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.849);
+    padding-top: 30px;
     list-style-type: none;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.384);
   }
   .header .hidden__navMenu .navMenu__item {
-    padding: 5px 10px;
-    margin: 5px 0px;
-    width: 150px;
+    margin: 10px 0px;
   }
   .header .hidden__navMenu .navMenu__item .navMenu__item__link {
+    background-color: #5cb85c;
     text-decoration: none;
     font-weight: bold;
     color: #414141;
     font-size: 1rem;
+    padding: 5px 10px;
+    width: 150px;
   }
   .header .hidden__navMenu .navMenu__item .navMenu__item__link:hover {
     color: #000000;

@@ -37,6 +37,11 @@
         text-shadow: $text-shadow;
         font-size: $font-size-3;
     }
+
+    @media screen and (max-width: 768px)
+    {
+        margin-top: 25px !important;
+    }
 }
 
 .lista_funcao{

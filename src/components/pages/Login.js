@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import {Toaster, toast} from 'react-hot-toast'
 import { useState, useEffect } from "react"
 import styles from '../../scss/pages/Login.module.css'
@@ -14,6 +14,7 @@ function Login()
 
     const [loading,  setLoading] = useState(false)
 
+    const navigate = useNavigate()
     const notifyErro = (msg) => toast.error(msg)
     const notifySuccess = (msg) => toast.success(msg)
 
@@ -58,8 +59,10 @@ function Login()
 
                         localStorage.setItem('User', usuario)
                         console.log(localStorage.getItem('User'))
+                        setLoading(true)
                         setTimeout(()=>{
-                            window.location.reload()
+                            navigate('/')
+                            // window.location.reload()
                         }, 2000)
                         break
                     case 'Usuario nao encontrado':

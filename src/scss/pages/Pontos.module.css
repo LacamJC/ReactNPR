@@ -7,7 +7,7 @@
 /* 16px */
 .main {
   max-width: 800px;
-  height: 300px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,4 +44,32 @@
   border-radius: 5px;
   text-decoration: none;
   transition: 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .main {
+    margin: 50px auto;
+  }
+}
+
+article h2 {
+  font-size: 2.25rem;
+  text-align: center;
+  font-family: "Protest Riot", "cursive";
+}
+article h2::first-letter {
+  color: #5cb85c;
+}
+article .pontosList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px 0px;
+}
+@media screen and (min-width: 768px) {
+  article .pontosList {
+    max-width: 1000px;
+    margin: auto;
+  }
 }/*# sourceMappingURL=Pontos.module.css.map */

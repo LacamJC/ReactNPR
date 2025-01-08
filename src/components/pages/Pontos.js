@@ -1,12 +1,41 @@
 import styles from '../../scss/pages/Pontos.module.css'
 import {Link} from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import PontosCard from '../events/PontosCard'
+import DefaultData from '../../data/DefaultData.json' 
+import axios from 'axios'
 function Pontos(){
 
+    const [pontos, setPontos] = useState([])
+
     useEffect(() => {
-        window.scrollTo(0, 0);
+        
+        window.scrollTo(0, 0)
+
+        const fetchData = async () => {
+            try {
+              const response = await axios.get('http://localhost:3001/pontos');
+              setPontos(response.data);
+            } catch (error) {
+               setPontos(DefaultData) 
+              console.error('Erro ao buscar dados:', error)
+            }
+          }
+
+        //   console.log(`Default: ${JSON.stringify(DefaultData)}`)
+
+        fetchData()
       }, [])
 
+      console.log(pontos)
+
+
+
+       
+
+     
+    
+  
       
     return(
         <>
@@ -17,8 +46,23 @@ function Pontos(){
                 </p>
 
                 <Link to="/cadastroPonto" className={`${styles.main__btn}`}>Cadastrar Ponto</Link>
-            </main>
 
+                
+            </main>
+            <article>
+                    <h2>Veja nossos pontos já existentes</h2>
+                    <div className={`${styles.pontosList}`}>
+                    {
+                        pontos ? (
+                            pontos.map(ponto=>(
+                                <PontosCard instituicao={ponto.instituicao} cep={ponto.cep} tipos={ponto.tipo}/>
+                            ))
+                        ) : ""
+                    }  
+                    </div>
+
+            </article>
+                 
         </>
     )
 }

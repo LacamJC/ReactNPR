@@ -3,10 +3,10 @@ import { useMask  } from '@react-input/mask'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 import Loader from "../events/Loader"
+import styles from '../../scss/pages/Cadastro.module.css'
 function Cadastro(){
 
     const[ShowPassword, setShowPassword] = useState(false)
-    const[erroMessage, setErroMessage] = useState('')
     const[erro, setErro] = useState(false)
     const[loading, setLoading] = useState(false)
 
@@ -70,7 +70,7 @@ function Cadastro(){
                     const data = response.data
                     const status = response.status 
                     setLoading(false)
-                    if(status != 201)
+                    if(status !== 201)
                     {
                         console.log(data.message)
                         notifyErro(data.message)
@@ -108,7 +108,7 @@ function Cadastro(){
         <>
             <h1 className={`text-center`}>Preencha seus dados</h1>
             {loading ? <Loader/> : ""}
-            <form className="w-50 mx-auto my-4" onSubmit={handleSubmit}>
+            <form className={` mx-auto my-4 ${styles.form}`} onSubmit={handleSubmit}>
                 <div className="form-floating mb-3 ">
                     <input 
                         type="text" 

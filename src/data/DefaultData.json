@@ -1,0 +1,22 @@
+[
+    {
+        "instituicao": "Recicla Barueri",
+        "cep" : "06440-010",
+        "tipo": "['Eletrônico']"
+    },
+    {
+        "instituicao": "SAMVIT Reciclagem Eletrônica ",
+        "cep" : "06408-030",
+        "tipo": "['Eletrônico']"
+    },
+    {
+        "instituicao": "Novo Horizonte Ambiental",
+        "cep" : "06404-301",
+        "tipo": "['Organico']"
+    },
+    {
+        "instituicao": "Porto Metais e Reciclagem",
+        "cep" : "06445-000",
+        "tipo": "['Reciclável']"
+    }
+]
