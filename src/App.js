@@ -8,6 +8,7 @@ import Cadastro from './components/pages/Cadastro'
 import Login from './components/pages/Login'
 import Pontos from './components/pages/Pontos'
 import CadastroPonto from './components/pages/CadastroPonto';
+import Profile from './components/pages/Profile';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/pontos" element={<Pontos/>}/> 
             <Route path="/cadastroPonto" element={<CadastroPonto/>}/>
+            <Route path="/profile" element={<Profile/>}/>
           </Routes>
           <Footer/>
         </Router>

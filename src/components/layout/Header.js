@@ -1,10 +1,10 @@
 import {Link} from 'react-router-dom'
-
+import { RiMenuFill } from "react-icons/ri"
 import styles from '../../scss/layout/Header.module.css'
 import logo from '../../img/logotipo.svg'
 
 function Header(){
- 
+    
     const user = JSON.parse(localStorage.getItem('User'))
     function logout(){
         localStorage.removeItem('User')
@@ -54,6 +54,8 @@ function Header(){
                 </ul>
                 
                 <input type="checkbox" className={`${styles.hidden__checkbox}`} id="checkbox" onClick={handleClick}></input>
+                <RiMenuFill className={`${styles.hidden__checkbox_icon}`} />
+                
                 <ul className={`${styles.hidden__navMenu}`}>
                 <li className={`${styles.navMenu__item} `} onClick={closeNav}>
                         <Link to="/" className={`${styles.navMenu__item__link}`}>Home</Link>

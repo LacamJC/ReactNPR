@@ -17,7 +17,7 @@ function CadastroPonto(){
         cidade : "",
         bairro: "",
         rua: "",
-        foto: "",
+        foto: null,
         descricao: "",
         tipo: []
     })
@@ -109,6 +109,10 @@ function CadastroPonto(){
         })
     }
 
+    function handleImageChange(e){
+        setFormData({...formData, foto : e.target.files[0]})
+    }
+
     function handleCheckboxChange(e){
         const {value, checked} = e.target
         const update = [...formData.tipo]
@@ -133,20 +137,26 @@ function CadastroPonto(){
     {
         e.preventDefault()
         
-        
+        console.log(formData)
         if(erro.status)
         {
             console.log("IMPOSSIVEL")
             notifyError(erro.message)
         }else{
-            await axios.post('http://localhost:3001/cadastrarPonto', formData)
-            .then(response=>{
-                notifySuccess('Dados enviados com sucesso')
-                
-            })
-            .catch(err=>{
-                console.log("ERRO TO FETCH> " + err)
-            })
+            try{
+                await axios.post('http://localhost:3001/cadastrarPonto', formData)
+                .then(response=>{
+                    console.log(response)
+                    notifySuccess('Dados enviados com sucesso')
+                    
+                })
+                .catch(err=>{
+                    console.log("ERRO TO FETCH> " + err)
+                })
+            }catch(err){
+                console.log(err)
+            }
+            
         }
        
         
@@ -239,6 +249,13 @@ function CadastroPonto(){
                                 </div>
                             </div>
                         </div>
+
+                        {/* <div class="mb-3">
+                        <label htmlFor="formFile" className="form-label">
+                        Selecione uma foto para o perfil</label>
+                        
+                        <input type="file" name="foto" id="foto" onChange={handleImageChange} placeholder='Em Desenvolvimento...' class="form-control"/>
+                    </div> */}
                         
                         <h3 className={`mb-3`}>Tipo de Coleta</h3>
                         <div className="btn-group mb-3" role="group">

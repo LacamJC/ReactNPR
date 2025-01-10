@@ -16,6 +16,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    padding: 0px 100px;
     .logo_link
     {
         text-decoration: none;
@@ -77,12 +78,41 @@
         }
     }
 
+    .hidden__checkbox_icon
+    {
+        display: none;
+    }
+    
+    @media screen and (max-width:576px){
+        background-image: url('../../img/header_bg/bg-440.png'); 
+        background-repeat: no-repeat;
+    }
+    @media (min-width:576px) and (max-width: 768px){
+        background-image: url('../../img/header_bg/bg-770.png');
+        background-repeat: no-repeat;
+    }
+    @media (min-width:800px) and (max-width: 1050px)
+    {
+        background-image: url('../../img/header_bg//bg-1050.png');
+        background-repeat: no-repeat;
+    }
+    @media (min-width:1060px) and (max-width: 1500px)
+    {
+        background-image: url('../../img/header_bg/bg-1450.png');
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 1510px) and (max-width:1940px)
+    {
+        background-image: url('../../img/header_bg/bg-1700.png');
+        background-repeat: no-repeat;
+    }
+    
    
     @media screen and (max-width: 768px)
     {
+       padding: 0px;
 
-            position: sticky !important;
-        
+        position: sticky !important;
         .hidden__navMenu{
             display: block;
             position: fixed;
@@ -95,23 +125,29 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: rgba(255, 255, 255, 0.849);
+            // background-color: rgba(255, 255, 255, 0.849);
+            background-color: #4c974c;
             padding-top: 30px;
             list-style-type: none;
             box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.384);
             .navMenu__item{
-                // background-color: blue;
-                
+                // background-color: blue !important;
+                padding: 2px;
                 margin: 10px 0px;
+                // width: 50%;
                 
  
                 .navMenu__item__link{
                     // background-color: red;
-                    // width: 100%;
+                    // width: 100% !important;
                     background-color: $cor1;
                     text-decoration: none;
                     font-weight: bold;
-                    color: $cinza;
+                    // min-width: 50%;
+                    // width: 30px;
+                    // color: $cinza;
+                    color: white;
+                    letter-spacing: 3px;
                     font-size: $font-size-3;
                     padding: 5px 10px;
                     width: 150px;
@@ -125,7 +161,17 @@
                 }
             }
         }
-    
+
+        .hidden__checkbox_icon{
+            display: block;
+            width: 30px;
+            height: 30px;
+            z-index: 999;
+            position: fixed;
+            right: 3rem;
+            transition: all 1s ease;
+        }
+
         .hidden__checkbox{
             width: 25px;
             background-color: blue;
@@ -133,13 +179,20 @@
             display: block;
             z-index: 1000;
             position: fixed;
+            opacity: 0;
             right: 3rem;
     
             
         }
+
     
         .hidden__checkbox:checked ~  .hidden__navMenu{
             transform: translateX(0%);
+        }
+
+        .hidden__checkbox:checked ~ .hidden__checkbox_icon{
+            transform: skew(25deg);
+            color: white;
         }
 
         
