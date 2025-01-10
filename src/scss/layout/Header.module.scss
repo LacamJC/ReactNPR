@@ -84,27 +84,33 @@
     }
     
     @media screen and (max-width:576px){
-        background-image: url('../../img/header_bg/bg-440.png'); 
+        background-image: url('../../img/header_bg/bg-440.webp'); 
         background-repeat: no-repeat;
     }
     @media (min-width:576px) and (max-width: 768px){
-        background-image: url('../../img/header_bg/bg-770.png');
+        background-image: url('../../img/header_bg/bg-770.webp');
         background-repeat: no-repeat;
     }
     @media (min-width:800px) and (max-width: 1050px)
     {
-        background-image: url('../../img/header_bg//bg-1050.png');
+        background-image: url('../../img/header_bg//bg-1050.webp');
         background-repeat: no-repeat;
     }
     @media (min-width:1060px) and (max-width: 1500px)
     {
-        background-image: url('../../img/header_bg/bg-1450.png');
+        background-image: url('../../img/header_bg/bg-1450.webp');
         background-repeat: no-repeat;
     }
-    @media (min-width: 1510px) and (max-width:1940px)
+    @media (min-width: 1510px) and (max-width:1840px)
     {
-        background-image: url('../../img/header_bg/bg-1700.png');
+        background-image: url('../../img/header_bg/bg-1700.webp');
         background-repeat: no-repeat;
+    }
+    @media (min-width: 1850px) and (max-width: 2000px)
+    {
+        background-image: url('../../img/header_bg/bg-1940.webp');
+        background-repeat: no-repeat;
+        background-size: contain;
     }
     
    
