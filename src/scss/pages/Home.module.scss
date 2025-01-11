@@ -1,5 +1,6 @@
 @import '../variables';
 
+
 .main{
     // background-color: rgba(0, 0, 255, 0.473);
 
@@ -51,4 +52,108 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+}
+
+@keyframes leafMove{
+    0%{
+        transform: translateX(10px);
+    }
+    50%{
+        transform: translateX(40px);
+    }
+    100%{
+        transform: translateX(10px);
+    }
+}
+
+
+
+.paragraph{
+    color: $cinza;
+    font-size: $font-size-2;
+    letter-spacing: 2.5px;
+    text-indent: 1rem;
+    text-shadow: $text-shadow;
+}
+
+
+
+.div_img
+{
+    // background-color: rgba(0, 0, 255, 0.363);
+    overflow: hidden;
+    img{
+        // background-color: red;
+        // padding: 5px;
+        transition: all .5s ease;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.267);
+
+        &:hover{
+            // filter: blur(0.1rem);
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+
+    .div_img__text
+    {
+        background-color: $cinza;
+        padding: 2px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        transition: .5s ease all;
+        opacity: 0;
+        transform: translateY(-25px);
+        letter-spacing: 2px;
+    
+
+        p{    
+            color: white;
+            padding: 0px;
+            margin: 0px;
+            font-family: $font-family;
+            // font-weight: bold;
+        }
+       
+    }
+
+    &:hover{
+        .div_img__text{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+.artigo
+{
+    margin-top: 50px;
+    margin-bottom: 200px;
+}
+
+.cta
+{
+    padding: 20px 5px;
+    background-color: $cor1;
+    color: white;
+    font-family: $fonte-destaque;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.486);
+
+    @media screen and (max-width: 768px)
+    {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+.centralizar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

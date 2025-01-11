@@ -47,4 +47,85 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+}
+
+@keyframes leafMove {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+.paragraph {
+  color: #414141;
+  font-size: 1.5rem;
+  letter-spacing: 2.5px;
+  text-indent: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.div_img {
+  overflow: hidden;
+}
+.div_img img {
+  transition: all 0.5s ease;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.267);
+}
+.div_img img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.div_img .div_img__text {
+  background-color: #414141;
+  padding: 2px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.5s ease all;
+  opacity: 0;
+  transform: translateY(-25px);
+  letter-spacing: 2px;
+}
+.div_img .div_img__text p {
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+.div_img:hover .div_img__text {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.artigo {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+.cta {
+  padding: 20px 5px;
+  background-color: #5cb85c;
+  color: white;
+  font-family: "Protest Riot", "cursive";
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 50px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.486);
+}
+@media screen and (max-width: 768px) {
+  .cta {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+}
+
+.centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=Home.module.css.map */

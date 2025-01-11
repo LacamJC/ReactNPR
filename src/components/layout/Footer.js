@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function Footer(){
     return(
         <>
-            <footer className={`w-100 row bg-sucscess ${styles.footer}`}>
+            <footer className={`w-100 mt-5 row bg-sucscess ${styles.footer}`}>
                 <div className={`col col-12 col-md-4`}>
                     <ul className={`${styles.footer_menu}`}>
                         <li className={`${styles.footer_menu__item}`}><Link><FaTwitter className={`${styles.icon}`}/>Twitter</Link></li>
