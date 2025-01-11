@@ -3,7 +3,7 @@ import axios from 'axios'
 import {useState, useEffect} from 'react'
 import url from '../../data/url.json'
 function ServerStatus(){
-    const [server, setServer] = useState(false)
+    const [server, setServer] = useState(true)
     async function ping()
     {
         
@@ -50,7 +50,10 @@ function ServerStatus(){
 
     return(
         <>
-             {server ? (<div className='alert alert-success'>Servidor ativo</div>) : (<div className='alert alert-danger'>Servidor desligado: Algumas funções que necessitam comunicação com o servidor estarão desabilitadas.</div>)}
+             
+             {!server && (
+                <div className='alert alert-danger'>Servidor desligado: Algumas funções que necessitam comunicação com o servidor estarão desabilitadas.</div>
+             )}
         </>
     )
 }

@@ -74,7 +74,13 @@ function Home(){
                     </p>
                 </div>
                 <div className={`col col-12 col-md-4`}>
-                    <img src={logo} className={styles.main__logo} />
+                    <img 
+                        src={logo} 
+                        className={styles.main__logo}
+                        alt="Logo da NPR"
+                        title='Logo da NPR'
+                        loading='lazy'    
+                    />
                     {/* aspdoksapodkkopasdopkaokdopkodksap */}
                 </div>
             </main>
@@ -124,7 +130,14 @@ function Home(){
                         
                        
                         <div className={styles.div_img}>
-                            <img src={img_mapa}  width={`100%`} onClick={openTab}/>
+                            <img 
+                                src={img_mapa}  
+                                width={`100%`} 
+                                onClick={openTab}
+                                alt='Print de uma imagem do nosso mapa'
+                                loading='lazy'
+                                title='Print de uma imagem de nosso mapa'
+                            />
                             <div className={styles.div_img__text}>
                                 <p>Clique para ir para o mapa</p>
                             </div>
@@ -136,7 +149,12 @@ function Home(){
             <article className={`${styles.artigo}`}>
                 <div class="row">
                 <div className={`${styles.centralizar} col col-12 col-md-4 mb-3`}>
-                        <img className="" src="https://cdn.pixabay.com/photo/2014/03/24/13/50/tree-294552_960_720.png" width={"80%"}/>
+                        <img  
+                            src="https://cdn.pixabay.com/photo/2014/03/24/13/50/tree-294552_960_720.png" 
+                            width={"80%"}
+                            alt='Imagem de um arvore'
+                            loading='lazy'
+                            />
                     </div>
                     <div class="col col-12 col-md-8">
                         

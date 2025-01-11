@@ -115,6 +115,9 @@ article .pontosList {
   }
 }
 
+.article {
+  margin-bottom: 150px;
+}
 .article .articleTitle {
   font-size: 2.25rem;
   font-family: "Protest Riot", "cursive";

@@ -18,6 +18,7 @@ function Pontos(){
               const response = await axios.get(`${url.url}/pontos`);
               console.log(response.status)
               setPontos(response.data);
+              console.log(response.data)
             } catch (error) {
                setPontos(DefaultData) 
                
@@ -32,7 +33,7 @@ function Pontos(){
 
 
 
-
+      console.log(pontos)
        
 
      
@@ -55,11 +56,10 @@ function Pontos(){
                     <h2>Veja nossos pontos já existentes</h2>
                     <div className={`${styles.pontosList}`}>
                     {
-                        
                         pontos && (
                             pontos.map(ponto=>(
                                 <PontosCard 
-                                    key={ponto.id}
+                                    // key={ponto.id}
                                     instituicao={ponto.instituicao} 
                                     cep={ponto.cep} 
                                     tipos={ponto.tipo}
@@ -82,13 +82,18 @@ function Pontos(){
                     A reciclagem é um dos principais caminhos para reduzir a poluição gerada pelo descarte inadequado de resíduos. Ao transformar materiais usados em novos produtos, diminuímos a quantidade de lixo enviado para os aterros sanitários e a poluição do solo e da água. Além disso, ao reciclar, evitamos a emissão de gases poluentes gerados pela produção de novos produtos a partir de matérias-primas virgens.
                 </p>
 
-                <h3 className={styles.subTitle}>Impactos Positivos da Reciclagem na Poluição do Ar, Solo e Água</h3>
-             
-                <ul className={styles.list}>
-                    <li><strong>Redução da poluição do ar:</strong> A produção de novos produtos a partir de matérias-primas exige energia e gera poluição atmosférica. Reciclando materiais como metal, vidro e plástico, evitamos a emissão de gases nocivos e reduzimos a poluição do ar.</li>
-                    <li><strong>Preservação do solo:</strong> O descarte incorreto de resíduos nos aterros sanitários pode levar ao contágio do solo por substâncias tóxicas. A reciclagem diminui a quantidade de lixo enviado para esses locais e preserva a saúde do solo.</li>
-                    <li><strong>Proteção da água:</strong> A decomposição de resíduos sólidos em aterros pode liberar substâncias químicas que contaminam os corpos d'água. Ao reciclar, evitamos o impacto negativo sobre os rios, lagos e oceanos, ajudando a manter a água limpa e segura.</li>
-                </ul>
+                <div class="row">
+                    <div class="col col-12 col-md-6">
+                        <h3 className={styles.subTitle}>Impactos Positivos da Reciclagem na Poluição do Ar, Solo e Água</h3>
+                        <ul className={styles.list}>
+                            <li><strong>Redução da poluição do ar:</strong> A produção de novos produtos a partir de matérias-primas exige energia e gera poluição atmosférica. Reciclando materiais como metal, vidro e plástico, evitamos a emissão de gases nocivos e reduzimos a poluição do ar.</li>
+                            <li><strong>Preservação do solo:</strong> O descarte incorreto de resíduos nos aterros sanitários pode levar ao contágio do solo por substâncias tóxicas. A reciclagem diminui a quantidade de lixo enviado para esses locais e preserva a saúde do solo.</li>
+                            <li><strong>Proteção da água:</strong> A decomposição de resíduos sólidos em aterros pode liberar substâncias químicas que contaminam os corpos d'água. Ao reciclar, evitamos o impacto negativo sobre os rios, lagos e oceanos, ajudando a manter a água limpa e segura.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col col-12 col-md-6 mt-5"><img src="https://images.pexels.com/photos/886521/pexels-photo-886521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={"100%"}/></div>
+                </div>
 
                 <h3 className={styles.subTitle}>O Impacto da Poluição no Meio Ambiente e na Saúde Humana</h3>
                 <p className={styles.articleParagraph}>

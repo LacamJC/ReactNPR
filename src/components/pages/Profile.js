@@ -33,7 +33,7 @@ function Profile(){
         <main className={`${styles.profileInfo}`}>
             <h2 className={`${styles.bemVindo}`}>Olá <span>{user.nome}</span></h2>
             <h3>Seus Dados</h3>
-            <form method="POST" action={`${url.url}/cadUser`}>
+            <form >
                 <div className="row">
                     <div className="col col-12 col-md-6">
                         <div className='mb-3'>
