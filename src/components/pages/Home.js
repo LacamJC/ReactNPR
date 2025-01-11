@@ -10,6 +10,15 @@ import { useEffect } from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Doughnut } from "react-chartjs-2"
 function Home(){
+    const user = JSON.parse(localStorage.getItem('User'))
+    function logout(){  
+        // navigate('/')
+        setTimeout(() => {
+            localStorage.removeItem('User')
+            window.location.reload()
+        }, 1);
+    }
+
     useEffect(() => {
         window.scrollTo(0, 0);
       }, [])
@@ -49,9 +58,17 @@ function Home(){
     return(
         <>
         <div className={`container m-auto`}>
+            {user && (
+                <article className={styles.userLoggedCard}>
+                    <h2>Olá {user.nome}</h2>
+                    <p>Não é {user.nome} ? <span onClick={logout}>Sair</span></p>
+                    <Link to="/profile">Ver perfil</Link>
+                </article>
+            )}
+
             <main className={`row w-100  bg-wardning ${styles.main} `}>
                 <div className={`col col-12 col-md-8 ${styles.main_FirstDiv}`}>
-                    <h1 className={styles.main__title}>dNatureza Prioridade Renovada</h1>
+                    <h1 className={styles.main__title}>Natureza Prioridade Renovada</h1>
                     <p className={styles.main__paragraph}>
                         Nós, da NPR, estamos empenhados em contribuir para o combate ao descarte irregular de resíduos em nossa cidade. Oferecemos pontos de coleta estrategicamente localizados, um mapa informativo que destaca esses pontos e uma ampla quantidade de informações sobre práticas sustentáveis. Acreditamos que, juntos, podemos fazer a diferença e ajudar a preservar o meio ambiente.
                     </p>
@@ -63,6 +80,7 @@ function Home(){
             </main>
             
 
+            
             <article className={`${styles.artigo}`}>
                 <div class="row">
                     <div class="col col-12 col-md-8 mb-5">

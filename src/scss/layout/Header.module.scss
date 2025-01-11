@@ -218,7 +218,7 @@
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
-    width: 220px;
+    width: 320px;
     padding: 0px 0px 15px 0px;
     color: white;
    .infoLink
@@ -236,12 +236,20 @@
         font-family: $font-family;
         letter-spacing: 3px;
         font-size: $font-size-3;
-        color: $cinza;
+    
 
         background-color: $cor1;
         color: white;
         padding: 16px 18px;
         border-radius: 5px;
+
+        a{
+            font-family: $font-family;
+        letter-spacing: 3px;
+        font-size: $font-size-3;
+        color: white;
+        text-decoration: none;
+        }
     
         
         text-shadow: $title-shadow;

@@ -2,13 +2,15 @@ import {Link} from 'react-router-dom'
 import { RiMenuFill } from "react-icons/ri"
 import styles from '../../scss/layout/Header.module.css'
 import logo from '../../img/logotipo.svg'
-
+import { useNavigate } from 'react-router-dom'
 function Header(){
     
     const user = JSON.parse(localStorage.getItem('User'))
-    function logout(){
-        localStorage.removeItem('User')
+    const navigate = useNavigate()
+    function logout(){  
+        navigate('/')
         setTimeout(() => {
+            localStorage.removeItem('User')
             window.location.reload()
         }, 1);
     }
@@ -79,7 +81,7 @@ function Header(){
 
                 {user ? 
                 <div className={`${styles.userInfo}`}>
-                    <h2 className={styles.userLogged}>Olá {user.nome} | <button onClick={logout}>Sair</button><div className={styles.lineUser}></div></h2>
+                    <h2 className={styles.userLogged}>Olá <Link to="/profile">{user.nome}</Link> | <button onClick={logout}>Sair</button><div className={styles.lineUser}></div></h2>
                     
                 </div> 
                 : 

@@ -63,7 +63,7 @@ function Login()
                         setLoading(true)
                         setTimeout(()=>{
                             navigate('/')
-                            // window.location.reload()
+                            window.location.reload()
                         }, 2000)
                         break
                     case 'Usuario nao encontrado':
