@@ -37,4 +37,17 @@
             }
         }
     }
+
+    .cst{
+        // background-color: pink;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .copyright{
+        p{
+            font-size: $font-size-2;
+        }
+        // background-color: red;
+    }
 }

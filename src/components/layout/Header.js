@@ -83,10 +83,10 @@ function Header(){
                     
                 </div> 
                 : 
-                <div className={`${styles.userInfo}`}>
-                    <Link to="/cadastro">Cadastre-se</Link>
+                <div className={`${styles.userInfo} bg-success rounded`}>
+                    <Link to="/cadastro" className={`${styles.infoLink} text-light`}>Cadastre-se</Link>
                     |
-                    <Link to="/login">Faça login</Link>
+                    <Link to="/login" className={`${styles.infoLink} text-light`}>Faça login</Link>
                 </div>}
             </header>
         </>

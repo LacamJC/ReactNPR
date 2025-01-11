@@ -34,4 +34,12 @@
   margin: 0px 5px;
   position: relative;
   top: -3px;
+}
+.footer .cst {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.footer .copyright p {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=Footer.module.css.map */

@@ -91,33 +91,7 @@ function Home(){
                 </div>
             </article>
 
-            <article className={`${styles.lista_funcao}  w-100 bg-gdanger`}>
-                <FuncaoSite 
-                    nome_funcao="Nosso Mapa"
-                    icone={`${IconeCaminhao}`}
-                    texto="Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. "
-                    link="mapa"
-                    text_link="Ir para mapa"
-                />
-
-                <FuncaoSite 
-                    nome_funcao="Faça seu cadastro"
-                    icone={`${IconeReciclagem}`}
-                    texto="Se você deseja contribuir enviando pontos de coleta para a análise, basta se cadastrar no nosso sistema. O processo é rápido !"
-                    link="cadastro"
-                    text_link="Cadastre-se"
-                />
-
-                <FuncaoSite
-                    nome_funcao="Pontos de Coleta"
-                    icone={`${IconeReciclagem}`}
-                    texto="Nos ajude a contribuir para o combate ao descarte irregular, faça o cadastro de um ponto de coleta !"
-                    link="pontos"
-                    text_link="Pontos de Coleta"
-                    
-                />
-                <div className={`col col-12 col-md-6`}></div>
-            </article>
+            
 
             <article className={`${styles.artigo}`}>
                 <h2 className="text-start px-3">Nosso Mapa</h2>
@@ -159,6 +133,33 @@ function Home(){
                     </div>
                     
                 </div>
+            </article>
+            <article className={`${styles.lista_funcao}  w-100 bg-gdanger`}>
+                <FuncaoSite 
+                    nome_funcao="Nosso Mapa"
+                    icone={`${IconeCaminhao}`}
+                    texto="Explore nosso mapa de Pontos Oficiais, onde você encontrará informações sobre todos os locais ativos atualmente. "
+                    link="mapa"
+                    text_link="Ir para mapa"
+                />
+
+                <FuncaoSite 
+                    nome_funcao="Faça seu cadastro"
+                    icone={`${IconeReciclagem}`}
+                    texto="Se você deseja contribuir enviando pontos de coleta para a análise, basta se cadastrar no nosso sistema. O processo é rápido !"
+                    link="cadastro"
+                    text_link="Cadastre-se"
+                />
+
+                <FuncaoSite
+                    nome_funcao="Pontos de Coleta"
+                    icone={`${IconeReciclagem}`}
+                    texto="Nos ajude a contribuir para o combate ao descarte irregular, faça o cadastro de um ponto de coleta !"
+                    link="pontos"
+                    text_link="Pontos de Coleta"
+                    
+                />
+                <div className={`col col-12 col-md-6`}></div>
             </article>
         </div>
         </>

@@ -210,17 +210,25 @@
 
     .userInfo
     {
-        height: 100%;
+    height: 50%;
     position: absolute;
     right: 2rem;
-    display: flex
-;
+    display: flex;
+    // background-color: green;
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
-    width: 200px;
+    width: 220px;
     padding: 0px 0px 15px 0px;
-
+    color: white;
+   .infoLink
+   {
+    // background-color: red;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+   }
     .userLogged
     {
         
@@ -229,14 +237,22 @@
         letter-spacing: 3px;
         font-size: $font-size-3;
         color: $cinza;
+
+        background-color: $cor1;
+        color: white;
+        padding: 16px 18px;
+        border-radius: 5px;
+    
         
         text-shadow: $title-shadow;
 
         button{
             border: none;
             background-color: transparent;
-            font-weight: 400;
+         
             font-size: $font-size-3;
+            color: white;
+            font-weight: bold;
         }
         .lineUser
         {

@@ -13,11 +13,13 @@ function Footer(){
                         <li className={`${styles.footer_menu__item}`}><Link><FaFacebook className={`${styles.icon}`}/> Facebook</Link></li>
                     </ul>
                 </div>
-                <div className={`col col-12 col-md-4`}>
-                    {/* <h3>Faça seu comentario</h3> */}
+                <div className={`col col-12 col-md-4 ${styles.cst}`}>
+                <div className={`${styles.copyright}`}>
+                    <p>© 2025 NPR. Todos os direitos reservados.</p>
+                </div>
                 </div>
                 <div className={`col col-12 col-md-4`}>
-                    <p>lorem isplum odlor amet</p>
+                    {/* <p>Juntos, transformamos resíduos em soluções e cuidamos do nosso planeta, um passo de cada vez.</p> */}
                 </div>
             </footer>
         </>
