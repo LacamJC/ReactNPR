@@ -7,7 +7,7 @@
 /* 16px */
 .footer {
   margin-top: 200px;
-  background-image: linear-gradient(to bottom, #5cb85c, #5cb85c, #5cb85c, #55a755);
+  background-image: linear-gradient(to bottom, #5cb85c, rgb(92, 184, 92), rgb(92, 184, 92), #55a755);
 }
 .footer .footer_menu {
   list-style: none;

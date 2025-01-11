@@ -7,6 +7,8 @@ import img_mapa from '../../img/assets/home/mapa.JPG'
 import { Link } from 'react-router-dom'
 import Loader from '../events/Loader'
 import { useEffect } from 'react'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Doughnut } from "react-chartjs-2"
 function Home(){
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -16,10 +18,37 @@ function Home(){
         window.open(img_mapa, "_blank")
       }
 
+      ChartJS.register(ArcElement, Tooltip, Legend);
+    const data = {
+        labels: ['Descarte incorreto', 'Reciclado corretamente', 'resíduos que não podem ser reciclados'],
+        datasets: [
+          {
+            label: '%',
+            data: [50, 30, 20],
+            backgroundColor: [
+              'rgba(255, 0, 55, 0.49)',
+              'rgba(92, 184, 92, 0.48)',
+              'rgba(97, 97, 97, 0.53)',
+            //   'rgba(75, 192, 192, 0.2)',
+            //   'rgba(153, 102, 255, 0.2)',
+            //   'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 0, 55, 0.49)',
+              'rgba(92, 184, 92, 0.48)',
+              'rgba(97, 97, 97, 0.53)',
+            //   'rgb(0, 255, 42)',
+            //   'rgba(153, 102, 255, 1)',
+            //   'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
     return(
         <>
         <div className={`container m-auto`}>
-            
             <main className={`row w-100  bg-wardning ${styles.main} `}>
                 <div className={`col col-12 col-md-8 ${styles.main_FirstDiv}`}>
                     <h1 className={styles.main__title}>Natureza Prioridade Renovada</h1>
@@ -32,17 +61,33 @@ function Home(){
                     {/* aspdoksapodkkopasdopkaokdopkodksap */}
                 </div>
             </main>
+            
 
             <article className={`${styles.artigo}`}>
-                <h2>Reciclar é cuidar do futuro</h2>
-                <p className={`${styles.paragraph}`}>
-                    Você sabia que mais de 30% do lixo produzido no Brasil poderia ser reciclado? A reciclagem não é apenas uma atitude inteligente, mas essencial para a preservação do nosso planeta. Ao separar corretamente os materiais e dar uma nova vida a eles, estamos economizando recursos naturais, reduzindo a poluição e evitando o acúmulo de resíduos.
-                </p>
-                <p className={`${styles.paragraph}`}>
-                    Cada gesto conta! Desde pequenas ações diárias, como separar plásticos, papéis e vidros, até a adesão a hábitos mais sustentáveis, você pode fazer a diferença. Vamos juntos transformar o lixo em oportunidade, criando um futuro mais verde e limpo para as próximas gerações.
-                </p>
-                <div className={`${styles.cta}`}>
-                    Junte-se a nós nesta jornada de conscientização e mudança!
+                <div class="row">
+                    <div class="col col-12 col-md-8 mb-5">
+                        <h2>Reciclar é cuidar do futuro</h2>
+                        <p className={`${styles.paragraph}`}>
+                            Você sabia que mais de 30% do lixo produzido no Brasil poderia ser reciclado? A reciclagem não é apenas uma atitude inteligente, mas essencial para a preservação do nosso planeta. Ao separar corretamente os materiais e dar uma nova vida a eles, estamos economizando recursos naturais, reduzindo a poluição e evitando o acúmulo de resíduos.
+                        </p>
+                        <p className={`${styles.paragraph}`}>
+                            Cada gesto conta! Desde pequenas ações diárias, como separar plásticos, papéis e vidros, até a adesão a hábitos mais sustentáveis, você pode fazer a diferença. Vamos juntos transformar o lixo em oportunidade, criando um futuro mais verde e limpo para as próximas gerações.
+                        </p>
+                        <div className={`${styles.cta}`}>
+                            Junte-se a nós nesta jornada de conscientização e mudança!
+                        </div>
+                    </div>
+                    <div class="col col-12 col-md-4 mb-5">
+                        <h2>Descarte de residuos em 2024</h2>
+                        <p className={`${styles.paragraph__sub}`}>Em 2023, o Brasil gerou aproximadamente 80 milhões de toneladas de lixo. Para 2024, a projeção é um valor similar, com um aumento estimado por conta do crescimento populacional e aumento no consumo.</p>
+                        <Doughnut data={data} options={{ responsive: true }} width={'400'} height={'200'}/>
+                        <ul className={`${styles.listGraph}`}>
+                            <li>Fonte</li>
+                            <li>BGE (Instituto Brasileiro de Geografia e Estatística)</li>
+                            <li>ABRELPE (Associação Brasileira de Empresas de Limpeza Pública e Resíduos Especiais)</li>
+                            <li>Ministério do Meio Ambiente (MMA)</li>
+                        </ul>
+                    </div>
                 </div>
             </article>
 

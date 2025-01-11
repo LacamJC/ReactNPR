@@ -20,7 +20,7 @@
   letter-spacing: 2px;
 }
 .main .main__title::first-letter {
-  color: #5cb85c;
+  color: rgb(92, 184, 92);
 }
 .main .main__paragraph {
   letter-spacing: 1px;
@@ -68,6 +68,27 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+.paragraph__sub {
+  color: #414141;
+  font-size: 1rem;
+  letter-spacing: 2.5px;
+  text-indent: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 768px) {
+  .paragraph__sub {
+    font-size: 1.5rem;
+  }
+}
+
+.listGraph {
+  list-style: disc;
+  font-family: "Roboto", sans-serif;
+}
+.listGraph li {
+  margin: 5px 0px;
+}
+
 .div_img {
   overflow: hidden;
 }
@@ -109,7 +130,7 @@
 
 .cta {
   padding: 20px 5px;
-  background-color: #5cb85c;
+  background-color: rgb(92, 184, 92);
   color: white;
   font-family: "Protest Riot", "cursive";
   font-size: 2rem;

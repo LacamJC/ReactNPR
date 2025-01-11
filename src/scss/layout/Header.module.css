@@ -67,7 +67,7 @@
 }
 .header .navMenu .navMenu__item:hover .hiddenLine {
   width: 100%;
-  background-color: #5cb85c;
+  background-color: rgb(92, 184, 92);
 }
 .header .hidden__checkbox_icon {
   display: none;
@@ -135,7 +135,7 @@
     margin: 10px 0px;
   }
   .header .hidden__navMenu .navMenu__item .navMenu__item__link {
-    background-color: #5cb85c;
+    background-color: rgb(92, 184, 92);
     text-decoration: none;
     font-weight: bold;
     color: white;
@@ -207,8 +207,8 @@
 .header .userInfo .userLogged .lineUser {
   width: 100%;
   height: 3px;
-  border: 1px solid #5cb85c;
-  background-color: #5cb85c;
+  border: 1px solid rgb(92, 184, 92);
+  background-color: rgb(92, 184, 92);
   animation: linemove 4s infinite linear;
 }
 .header .userInfo a {
@@ -230,18 +230,18 @@
   }
   25% {
     width: 50%;
-    border-color: #5cb85c;
+    border-color: rgb(92, 184, 92);
   }
   50% {
     width: 100%;
-    border-color: #5cb85c;
+    border-color: rgb(92, 184, 92);
   }
   75% {
     width: 50%;
-    border-color: #5cb85c;
+    border-color: rgb(92, 184, 92);
   }
   100% {
     width: 1%;
-    border-color: #5cb85c;
+    border-color: rgb(92, 184, 92);
   }
 }/*# sourceMappingURL=Header.module.css.map */
