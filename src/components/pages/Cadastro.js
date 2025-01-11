@@ -4,6 +4,7 @@ import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 import Loader from "../events/Loader"
 import styles from '../../scss/pages/Cadastro.module.css'
+import url from '../../data/url.json'
 function Cadastro(){
 
     const[ShowPassword, setShowPassword] = useState(false)
@@ -65,7 +66,7 @@ function Cadastro(){
             
             try{
                 setLoading(true)
-                await axios.post('http://localhost:3001/cadUser', usuario)
+                await axios.post(`${url.url}/cadUser`, usuario)
                 .then(response=>{
                     const data = response.data
                     const status = response.status 

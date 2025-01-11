@@ -51,7 +51,7 @@ function Home(){
         <div className={`container m-auto`}>
             <main className={`row w-100  bg-wardning ${styles.main} `}>
                 <div className={`col col-12 col-md-8 ${styles.main_FirstDiv}`}>
-                    <h1 className={styles.main__title}>Natureza Prioridade Renovada</h1>
+                    <h1 className={styles.main__title}>dNatureza Prioridade Renovada</h1>
                     <p className={styles.main__paragraph}>
                         Nós, da NPR, estamos empenhados em contribuir para o combate ao descarte irregular de resíduos em nossa cidade. Oferecemos pontos de coleta estrategicamente localizados, um mapa informativo que destaca esses pontos e uma ampla quantidade de informações sobre práticas sustentáveis. Acreditamos que, juntos, podemos fazer a diferença e ajudar a preservar o meio ambiente.
                     </p>

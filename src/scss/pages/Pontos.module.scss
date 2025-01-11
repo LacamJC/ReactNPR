@@ -128,3 +128,29 @@ article
        
     }
 }
+
+.article
+{
+    .articleTitle
+    {
+        font-size: $font-size-1;
+        font-family: $fonte-destaque;
+        text-shadow: $title-shadow;
+        margin-bottom: 1.5rem;
+    }
+
+    .articleParagraph
+    {
+        font-size: $font-size-3;
+        text-indent: 2rem;
+        text-shadow: $text-shadow;
+        letter-spacing: 2px;
+        line-height: 1.5rem;
+    }
+
+    .subTitle{
+        font-family: $fonte-destaque;
+        font-size: $font-size-2;
+        margin: 1.5rem 0px;
+    }
+}

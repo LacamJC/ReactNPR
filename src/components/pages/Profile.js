@@ -1,6 +1,7 @@
 import styles from '../../scss/pages/Profile.module.css'
 import { useState, useEffect } from 'react'
 import { useMask } from "@react-input/mask"
+import url from '../../data/url.json'
 function Profile(){
 
     const user = JSON.parse(localStorage.getItem('User'))
@@ -32,7 +33,7 @@ function Profile(){
         <main className={`${styles.profileInfo}`}>
             <h2 className={`${styles.bemVindo}`}>Olá <span>{user.nome}</span></h2>
             <h3>Seus Dados</h3>
-            <form method="POST" action="http://localhost:3001/cadUser">
+            <form method="POST" action={`${url.url}/cadUser`}>
                 <div className="row">
                     <div className="col col-12 col-md-6">
                         <div className='mb-3'>

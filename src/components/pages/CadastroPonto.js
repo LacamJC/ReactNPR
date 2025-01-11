@@ -5,6 +5,7 @@ import {Toaster, toast} from 'react-hot-toast'
 import axios from 'axios'
 import styles from '../../scss/pages/CadastroPonto.module.css'
 import ServerStatus from '../events/ServerStatus'
+import url from '../../data/url.json'
 function CadastroPonto(){
     const user = JSON.parse(localStorage.getItem('User'))
     
@@ -144,7 +145,7 @@ function CadastroPonto(){
             notifyError(erro.message)
         }else{
             try{
-                await axios.post('http://localhost:3001/cadastrarPonto', formData)
+                await axios.post(`${url.url}/cadastrarPonto`, formData)
                 .then(response=>{
                     console.log(response)
                     notifySuccess('Dados enviados com sucesso')

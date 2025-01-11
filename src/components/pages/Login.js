@@ -5,6 +5,7 @@ import styles from '../../scss/pages/Login.module.css'
 import axios from "axios"
 import Loader from "../events/Loader"
 import ServerStatus from "../events/ServerStatus"
+import url from '../../data/url.json'
 function Login()
 {
     const [user, setUser] = useState({
@@ -42,7 +43,7 @@ function Login()
 
         try{
             setLoading(true)
-            await axios.post('http://localhost:3001/verifyUser', user)
+            await axios.post(`${url.url}/verifyUser`, user)
             .then(response=>{
                 // console.log(response)
                 const data = response.data

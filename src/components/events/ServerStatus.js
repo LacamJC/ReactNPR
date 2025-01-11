@@ -1,7 +1,7 @@
 
 import axios from 'axios'
 import {useState, useEffect} from 'react'
-
+import url from '../../data/url.json'
 function ServerStatus(){
     const [server, setServer] = useState(false)
     async function ping()
@@ -10,7 +10,7 @@ function ServerStatus(){
         try{
             // console.log("verificando serivdor")
             localStorage.removeItem('serverStatus')
-            await axios.get('http://localhost:3001/ping')
+            await axios.get(`${url.url}/ping`)
             .then(response=>{
                 // O servidor esta ativo
                 
