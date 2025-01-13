@@ -114,7 +114,7 @@
 }
 @media screen and (max-width: 768px) {
   .paragraph {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.8rem;
     font-weight: 300;
   }
