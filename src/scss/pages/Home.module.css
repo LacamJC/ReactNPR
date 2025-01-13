@@ -4,7 +4,6 @@
 /* 16 px */
 /* 48px */
 /* 32px */
-/* 16px */
 .userLoggedCard {
   display: none;
 }
@@ -115,8 +114,9 @@
 }
 @media screen and (max-width: 768px) {
   .paragraph {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     line-height: 1.8rem;
+    font-weight: 300;
   }
 }
 
