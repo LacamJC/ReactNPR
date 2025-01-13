@@ -90,7 +90,7 @@ function Home(){
             <article className={`${styles.artigo}`}>
                 <div class="row">
                     <div class="col col-12 col-md-8 mb-5">
-                        <h2>Reciclar é cuidar do futuro</h2>
+                        <h2 className={`${styles.subtitle}`}>Reciclar é cuidar do futuro</h2>
                         <p className={`${styles.paragraph}`}>
                             Você sabia que mais de 30% do lixo produzido no Brasil poderia ser reciclado? A reciclagem não é apenas uma atitude inteligente, mas essencial para a preservação do nosso planeta. Ao separar corretamente os materiais e dar uma nova vida a eles, estamos economizando recursos naturais, reduzindo a poluição e evitando o acúmulo de resíduos.
                         </p>
@@ -102,8 +102,8 @@ function Home(){
                         </div>
                     </div>
                     <div class="col col-12 col-md-4 mb-5">
-                        <h2>Descarte de residuos em 2024</h2>
-                        <p className={`${styles.paragraph__sub}`}>Em 2023, o Brasil gerou aproximadamente 80 milhões de toneladas de lixo. Para 2024, a projeção é um valor similar, com um aumento estimado por conta do crescimento populacional e aumento no consumo.</p>
+                        <h2 className={`${styles.subtitle}`}>Descarte de residuos em 2024</h2>
+                        <p className={`${styles.paragraph}`}>Em 2023, o Brasil gerou aproximadamente 80 milhões de toneladas de lixo. Para 2024, a projeção é um valor similar, com um aumento estimado por conta do crescimento populacional e aumento no consumo.</p>
                         <Doughnut data={data} options={{ responsive: true }} width={'400'} height={'200'}/>
                         <ul className={`${styles.listGraph}`}>
                             <li>Fonte</li>
@@ -118,7 +118,7 @@ function Home(){
             
 
             <article className={`${styles.artigo}`}>
-                <h2 className="text-start px-3">Nosso Mapa</h2>
+                <h2 className={`text-start px-3 ${styles.subtitle}`}>Nosso Mapa</h2>
                 <div className="row">
                     <div className="col col-12 col-md-8">
                         <p className={`${styles.paragraph}`}>
