@@ -22,4 +22,9 @@
   font-family: "Protest Riot", "cursive";
   font-size: 1.5rem;
   color: #414141;
+}
+.profileInfo .inputName {
+  width: 180px;
+  padding: 5px;
+  height: 39px;
 }/*# sourceMappingURL=Profile.module.css.map */
