@@ -6,6 +6,7 @@ import axios from "axios"
 import Loader from "../events/Loader"
 import ServerStatus from "../events/ServerStatus"
 import url from '../../data/url.json'
+import PasswordProps from "../events/PasswordProps"
 function Login()
 {
     const [user, setUser] = useState({
@@ -28,6 +29,7 @@ function Login()
 
     function handleChange(e){
         const {name, value } = e.target
+    
 
         setUser({
             ...user,
@@ -126,6 +128,7 @@ function Login()
                 />
                 <label htmlFor="senha">Senha</label>
             </div>
+            <PasswordProps/>
             <div className="form-check mb-3">
                         <input 
                             type="checkbox" 

@@ -163,6 +163,8 @@ function Profile(){
                         id='senha' 
                         name='senha'
                         onChange={handleChange}
+                        minLength="6"
+                        maxLength="12"
                     />: <input 
                     type={showPassword ? 'text' : 'password'}
                     className='form-control' 
