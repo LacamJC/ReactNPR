@@ -1,6 +1,4 @@
-Aqui está o **README.md** atualizado no formato que você solicitou:
 
-```markdown
 # 🌿 Natureza Prioridade Renovada - NPR -- React Version
 
 - [Sobre](#sobre)
