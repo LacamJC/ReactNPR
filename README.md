@@ -1,5 +1,5 @@
 
-# 🌿 Natureza Prioridade Renovada - NPR -- React Version
+# 🌿 Natureza Prioridade Renovada - NPR
 
 - [Sobre](#sobre)
 - [Objetivo](#objetivo)

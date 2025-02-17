@@ -188,7 +188,7 @@
   align-items: center;
   font-weight: bold;
   width: 320px;
-  padding: 0px 0px 15px 0px;
+  transform: translateY(-5px);
   color: white;
 }
 .header .userInfo .infoLink {

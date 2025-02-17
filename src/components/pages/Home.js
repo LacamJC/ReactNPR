@@ -102,7 +102,7 @@ function Home(){
                         </div>
                     </div>
                     <div class="col col-12 col-md-4 mb-5">
-                        <h2 className={`${styles.subtitle}`}>Descarte de residuos em 2024</h2>
+                        <h2 className={`${styles.subtitle} ${styles.h_1}`}>Descarte de residuos em 2024</h2>
                         <p className={`${styles.paragraph}`}>Em 2023, o Brasil gerou aproximadamente 80 milhões de toneladas de lixo. Para 2024, a projeção é um valor similar, com um aumento estimado por conta do crescimento populacional e aumento no consumo.</p>
                         <Doughnut data={data} options={{ responsive: true }} width={'400'} height={'200'}/>
                         <ul className={`${styles.listGraph}`}>
